@@ -7,8 +7,15 @@ namespace Team_Project_Voting
     {
         public Form1()
         {
+            Form mainForm = this.FindForm();
             InitializeComponent();
             label1.Text = "I am a label";
+            mainForm.Hide();
+            Login loginForm = new Login();
+
+            loginForm.ShowDialog();
+
+            mainForm.Show();
         }
         private void Setting_Click(object sender, EventArgs e)
         {
