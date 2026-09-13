@@ -1,21 +1,17 @@
 using System.Windows.Forms;
 using static Team_Project_Voting.TitleVoiting;
 using System.Drawing.Imaging;
+using Azure.Core;
 namespace Team_Project_Voting
 {
+
     public partial class Form1 : Form
     {
         public Form1()
         {
-            Form mainForm = this.FindForm();
             InitializeComponent();
             label1.Text = "I am a label";
-            mainForm.Hide();
-            Login loginForm = new Login();
-
-            loginForm.ShowDialog();
-
-            mainForm.Show();
+            Shown += Form1_Shown;
         }
         private void Setting_Click(object sender, EventArgs e)
         {
@@ -38,6 +34,18 @@ namespace Team_Project_Voting
 
         private void Form1_Load(object sender, EventArgs e)
         {
+        }
+
+        private void Form1_Shown(object? sender, EventArgs e)
+        {
+            using var loginForm = new Login();
+
+            if (loginForm.ShowDialog(this) != DialogResult.OK)
+            {
+                Close();
+                return;
+            }
+
             VoteItems();
         }
 

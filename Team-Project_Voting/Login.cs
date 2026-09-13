@@ -24,21 +24,21 @@ namespace Team_Project_Voting
                 if (user != null)
                 {
                     MessageBox.Show("Ви успішно увійшли");
+                    DialogResult = DialogResult.OK;
+                    Close();
                 }
                 else
                 {
                     MessageBox.Show("Неправильний логін або пароль");
                 }
+
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form mainForm = this.FindForm();
-            mainForm.Hide();
-            Register RegisterForm = new Register();
-
-            RegisterForm.ShowDialog();
+            using var registerForm = new Register();
+            registerForm.ShowDialog(this);
         }
     }
 }

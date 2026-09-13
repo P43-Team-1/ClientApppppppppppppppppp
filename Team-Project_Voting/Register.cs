@@ -48,11 +48,7 @@ namespace Team_Project_Voting
                 context.SaveChanges();
 
                 MessageBox.Show("Реєстрація успішна!");
-
-                // Повертаємося до Login
-                Login loginForm = new Login();
-                loginForm.Show();
-                this.Hide();
+                Close();
             }
         }
 

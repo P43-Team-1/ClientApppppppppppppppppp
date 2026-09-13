@@ -31,9 +31,7 @@
             Setting = new Button();
             label1 = new Label();
             label2 = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             flowLayoutPanel2 = new FlowLayoutPanel();
-            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // Setting
@@ -60,19 +58,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(3, 0);
+            label2.Location = new Point(9, 9);
             label2.Name = "label2";
             label2.Size = new Size(89, 20);
             label2.TabIndex = 5;
             label2.Text = "Користувач";
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Controls.Add(label2);
-            flowLayoutPanel1.Location = new Point(7, 2);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(129, 36);
-            flowLayoutPanel1.TabIndex = 6;
             // 
             // flowLayoutPanel2
             // 
@@ -88,15 +78,13 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(980, 546);
+            Controls.Add(label2);
             Controls.Add(flowLayoutPanel2);
-            Controls.Add(flowLayoutPanel1);
             Controls.Add(label1);
             Controls.Add(Setting);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
-            flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -106,7 +94,6 @@
         private Button Setting;
         private Label label1;
         private Label label2;
-        private FlowLayoutPanel flowLayoutPanel1;
         private FlowLayoutPanel flowLayoutPanel2;
     }
 }

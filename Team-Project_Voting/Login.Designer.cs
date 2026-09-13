@@ -39,7 +39,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(202, 72);
+            label1.Location = new Point(15, 72);
             label1.Name = "label1";
             label1.Size = new Size(46, 20);
             label1.TabIndex = 0;
@@ -48,7 +48,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(202, 196);
+            label2.Location = new Point(15, 196);
             label2.Name = "label2";
             label2.Size = new Size(70, 20);
             label2.TabIndex = 1;
@@ -56,33 +56,33 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(192, 95);
+            textBox1.Location = new Point(15, 95);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(286, 27);
             textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(192, 219);
+            textBox2.Location = new Point(15, 219);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(286, 27);
             textBox2.TabIndex = 3;
             // 
             // button1
             // 
-            button1.Location = new Point(39, 284);
+            button1.Location = new Point(35, 304);
             button1.Name = "button1";
             button1.Size = new Size(233, 107);
             button1.TabIndex = 4;
-            button1.Text = "Login";
+            button1.Text = "Залогінитись";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_1;
             // 
             // button2
             // 
-            button2.Location = new Point(524, 284);
+            button2.Location = new Point(182, 12);
             button2.Name = "button2";
-            button2.Size = new Size(233, 107);
+            button2.Size = new Size(119, 32);
             button2.TabIndex = 5;
             button2.Text = "Register";
             button2.UseVisualStyleBackColor = true;
@@ -92,7 +92,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(312, 450);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox2);
