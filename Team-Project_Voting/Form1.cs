@@ -2,11 +2,14 @@ using System.Windows.Forms;
 using static Team_Project_Voting.TitleVoiting;
 using System.Drawing.Imaging;
 using Azure.Core;
+using Team_Project_Voting.Data;
+using Team_Project_Voting;
 namespace Team_Project_Voting
 {
 
     public partial class Form1 : Form
     {
+        private string login;
         public Form1()
         {
             InitializeComponent();
@@ -44,6 +47,15 @@ namespace Team_Project_Voting
             {
                 Close();
                 return;
+            }
+
+            login = loginForm.GetLogin();
+
+            using (var context = new VotingMenu())
+            {
+                var user = context.Users.FirstOrDefault(u => u.Login == login);
+                if (user != null)
+                    label2.Text = user.Username;
             }
 
             VoteItems();
