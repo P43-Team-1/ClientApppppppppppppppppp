@@ -1,7 +1,6 @@
 using System.Windows.Forms;
 using static Team_Project_Voting.TitleVoiting;
 using System.Drawing.Imaging;
-using Azure.Core;
 namespace Team_Project_Voting
 {
 
