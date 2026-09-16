@@ -6,6 +6,7 @@ namespace Team_Project_Voting
 
     public partial class Form1 : Form
     {
+        private string login;
         public Form1()
         {
             InitializeComponent();

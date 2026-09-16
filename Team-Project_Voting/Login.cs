@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Identity.Client;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -27,11 +28,25 @@ namespace Team_Project_Voting
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+        public string GetLogin()
+        {
+            return logon;
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
             using var registerForm = new Register();
             registerForm.ShowDialog(this);
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }

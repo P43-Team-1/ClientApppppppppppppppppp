@@ -101,6 +101,8 @@
             Controls.Add(label1);
             Name = "Login";
             Text = "Login";
+            FormClosing += Login_FormClosing;
+            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }
