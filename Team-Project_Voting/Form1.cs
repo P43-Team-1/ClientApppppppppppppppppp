@@ -45,16 +45,11 @@ namespace Team_Project_Voting
                 Close();
                 return;
             }
+            string Nick = loginForm.NickName;
+            string Role = loginForm.Role;
 
-            login = loginForm.GetLogin();
-
-            using (var context = new VotingMenu())
-            {
-                var user = context.Users.FirstOrDefault(u => u.Login == login);
-                if (user != null)
-                    label2.Text = user.Username;
-            }
-
+            label2.BeginInvoke(() => { label2.Text = Nick; });
+            if(Role == "Admin") { Setting.BeginInvoke(() => { Setting.Visible = true; }); }
             VoteItems();
         }
 
