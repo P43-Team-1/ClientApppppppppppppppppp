@@ -23,6 +23,7 @@ namespace Team_Project_Voting
                 return;
             }
             
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

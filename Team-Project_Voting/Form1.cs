@@ -44,7 +44,10 @@ namespace Team_Project_Voting
                 Close();
                 return;
             }
+            string Nick = loginForm.NickName;
+            string Role = loginForm.Role;
 
+            label2.BeginInvoke(() => { label2.Text = Nick; });
             VoteItems();
         }
 

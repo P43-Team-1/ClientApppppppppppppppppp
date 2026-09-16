@@ -11,9 +11,37 @@ namespace Team_Project_Voting
         int discover_port = 4568;
         int port = 4567;
         IPEndPoint serverEndPoint;
-        public async Task Login()
+        public async Task<string> Login(string login, string password)
         {
             serverEndPoint = await FindServer();
+            
+            if(serverEndPoint == null)
+            {
+                MessageBox.Show("Server not found");
+                return null;
+            }
+
+            Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            await socket.ConnectAsync(serverEndPoint);
+
+            string request = $"login;{login};{Convert.ToBase64String(Encoding.UTF8.GetBytes(password))}";
+            byte[] buffer = Encoding.UTF8.GetBytes(request);
+            await socket.SendAsync(buffer);
+
+            buffer = new byte[1024];
+            int len = await socket.ReceiveAsync(buffer);
+            string response = Encoding.UTF8.GetString(buffer, 0, len);
+            string[] parts = response.Split(';');
+            socket.Close();
+            if (parts[0] == "login_success")
+            {
+                return $"{parts[1]};{parts[2]}";
+            }
+            else
+            {
+                MessageBox.Show("Login failed");
+                return null;
+            }
         }
             
 

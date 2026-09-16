@@ -7,6 +7,8 @@ namespace Team_Project_Voting
     public partial class Login : Form
     {
         ServerSpeaking server;
+        public string NickName { get; private set; }
+        public string Role { get; private set; }
         public Login()
         {
             InitializeComponent();
@@ -15,7 +17,15 @@ namespace Team_Project_Voting
 
         private async void button1_Click_1(object sender, EventArgs e)
         {
-            server.Login();
+            string login = textBox1.Text;
+            string password = textBox2.Text;
+            string result = await server.Login(login, password);
+            string[] parts = result.Split(';');
+            NickName = parts[0];
+            Role = parts[1];
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
