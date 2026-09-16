@@ -49,6 +49,7 @@ namespace Team_Project_Voting
             string Role = loginForm.Role;
 
             label2.BeginInvoke(() => { label2.Text = Nick; });
+            if(Role == "Admin") { Setting.BeginInvoke(() => { Setting.Visible = true; }); }
             VoteItems();
         }
 
