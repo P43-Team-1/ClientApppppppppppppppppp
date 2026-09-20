@@ -30,38 +30,30 @@
         {
             Statistic = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            label2 = new Label();
             label1 = new Label();
-            flowLayoutPanel1.SuspendLayout();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // Statistic
             // 
-            Statistic.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Statistic.AutoSize = true;
             Statistic.Cursor = Cursors.Hand;
-            Statistic.Location = new Point(1, 421);
+            Statistic.Dock = DockStyle.Bottom;
+            Statistic.Location = new Point(3, 2);
             Statistic.Name = "Statistic";
-            Statistic.Size = new Size(174, 20);
+            Statistic.Size = new Size(207, 20);
             Statistic.TabIndex = 3;
             Statistic.Text = "Переглянути статистику";
+            Statistic.SizeChanged += Statistic_SizeChanged;
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Controls.Add(label2);
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Location = new Point(16, 32);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(398, 333);
             flowLayoutPanel1.TabIndex = 2;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(3, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 20);
-            label2.TabIndex = 0;
-            label2.Text = "label2";
             // 
             // label1
             // 
@@ -75,21 +67,35 @@
             label1.TextAlign = ContentAlignment.TopCenter;
             label1.SizeChanged += label1_SizeChanged;
             // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(Statistic, 0, 0);
+            tableLayoutPanel1.Location = new Point(0, 467);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(427, 22);
+            tableLayoutPanel1.TabIndex = 4;
+            // 
             // Voting
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(428, 445);
+            ClientSize = new Size(428, 489);
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(label1);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(Statistic);
             Name = "Voting";
             Text = "Voting";
             Load += Voting_Load;
-            flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel1.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -98,6 +104,6 @@
         private Label Statistic;
         private FlowLayoutPanel flowLayoutPanel1;
         private Label label1;
-        private Label label2;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }
