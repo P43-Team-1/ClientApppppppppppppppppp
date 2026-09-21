@@ -21,12 +21,14 @@ namespace Team_Project_Voting
             string login = textBox1.Text;
             string password = textBox2.Text;
             string result = await server.Login(login, password);
-            string[] parts = result.Split(';');
-            NickName = parts[0];
-            Role = parts[1];
+            if (result != null) {
+                string[] parts = result.Split(';');
+                NickName = parts[0];
+                Role = parts[1];
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }            
         }
 
         private void button2_Click(object sender, EventArgs e)
